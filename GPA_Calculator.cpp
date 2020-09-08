@@ -11,9 +11,9 @@ struct Subjects
     double grade;
 };
 
-void inputlist(Subjects sub[], size_t size);
-double Calculator1(Subjects sub[], size_t size);
-double Calculator2(Subjects sub[], size_t size);
+void inputSubject(Subjects sub[], size_t size);
+double GPA10(Subjects sub[], size_t size);
+double GPA4(Subjects sub[], size_t size);
 
 void input(Subjects &subjects)
 {
@@ -25,7 +25,7 @@ void input(Subjects &subjects)
     cout << "Grade's Subjects of 10: ";
     cin >> subjects.grade;
 }
-void inputlist(Subjects sub[], size_t size)
+void inputSubject(Subjects sub[], size_t size)
 {
 
     for (size_t i = 0; i < size; i++)
@@ -53,7 +53,7 @@ void inputlist(Subjects sub[], size_t size)
     }
 }
 
-double Calculator1(Subjects sub[], size_t size)
+double GPA10(Subjects sub[], size_t size)
 {
     double result = 0;
     int count = 0;
@@ -65,7 +65,7 @@ double Calculator1(Subjects sub[], size_t size)
     return result / count;
 }
 
-double Calculator2(Subjects sub[], size_t size)
+double GPA4(Subjects sub[], size_t size)
 {
     double result = 0;
     int count = 0;
@@ -115,10 +115,10 @@ int main(int argc, char const *argv[])
     size_t n;
     cout << "Number of Subjects Studied: ";
     cin >> n;
-    inputlist(sub, n);
-    cout << "GPA out of 10: " << Calculator1(sub, n) << endl;
+    inputSubject(sub, n);
+    cout << "GPA out of 10: " << GPA10(sub, n) << endl;
     cout << "============================================================================" << endl;
-    cout << "GPA out of 4: " << Calculator2(sub, n) << endl;
+    cout << "GPA out of 4: " << GPA4(sub, n) << endl;
     getch();
     return 0;
 }
